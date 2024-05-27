@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Objects;
+
 public class Sucursal {
 	private int idSucursal;
 	private Domicilio domicilio;
@@ -28,6 +30,10 @@ public class Sucursal {
 	@Override
 	public String toString() {
 		return "Sucursal [idSucursal=" + idSucursal + ", domicilio=" + domicilio + "]";
+	}
+
+	public boolean equals(Sucursal other) {
+		return idSucursal == other.idSucursal;
 	}
 	
 	

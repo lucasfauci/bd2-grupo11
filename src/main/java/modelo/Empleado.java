@@ -55,7 +55,9 @@ public class Empleado extends Persona {
 				+ obraSocial + ", nroAfiliado=" + nroAfiliado + ", domicilio=" + domicilio + "]";
 	}
 
-	
+	public boolean equals(Empleado other) {
+		return this.idEmpleado == other.idEmpleado;
+	}
 	
 	
 

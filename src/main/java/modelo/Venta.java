@@ -14,7 +14,7 @@ public class Venta {
 	private List<Detalle> detalles;
 	private float total;
 	
-	public Venta(int idVenta, String nroTicket, LocalDateTime fecha, String formaPago,
+	public Venta(int idVenta, int nroTicket, LocalDateTime fecha, String formaPago,
 			Empleado empleadoAtendio, Empleado empleadoCobro, Cliente cliente, List<Detalle> detalles) {
 		this.idVenta = idVenta;
 		this.fecha = fecha;
@@ -43,7 +43,7 @@ public class Venta {
 	}
 
 
-	public void setNroTicket(String nroTicket) {
+	public void setNroTicket(int nroTicket) {
 		this.nroTicket = "000" + this.getEmpleadoAtendio().getSucursal().getIdSucursal() + "-" + nroTicket;
 	}
 
@@ -117,7 +117,14 @@ public class Venta {
 		this.total = total;
 	}
 
-
+	private float calcularTotal() {
+		float total = 0;
+		for (Detalle detalle : this.detalles) {
+			total += detalle.getPrecioDetalle();
+		}
+		return total;
+	}
+	
 	@Override
 	public String toString() {
 		return "Venta [idVenta=" + idVenta + ", nroTicket=" + nroTicket + ", fecha=" + fecha + ", total=" + total
@@ -126,13 +133,7 @@ public class Venta {
 	}
 	
 	
-	private float calcularTotal() {
-		float total = 0;
-		for (Detalle detalle : this.detalles) {
-			total += detalle.getPrecioDetalle();
-		}
-		return total;
-	}
+	
 	
 	
 }

@@ -6,13 +6,15 @@ public class Producto {
 	private String tipo;
 	private String descripcion;
 	private String laboratorio;
+	private double precio;
 	
-	public Producto(int idProducto, int codigo, String tipo, String descripcion, String laboratorio) {
+	public Producto(int idProducto, int codigo, String tipo, String descripcion, String laboratorio, double precio) {
 		this.idProducto = idProducto;
 		this.codigo = codigo;
 		this.tipo = tipo;
 		this.descripcion = descripcion;
 		this.laboratorio = laboratorio;
+		this.setPrecio(precio);
 	}
 
 	public int getIdProducto() {
@@ -55,12 +57,23 @@ public class Producto {
 		this.laboratorio = laboratorio;
 	}
 
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+
 	@Override
 	public String toString() {
 		return "Producto [idProducto=" + idProducto + ", codigo=" + codigo + ", tipo=" + tipo + ", descripcion="
-				+ descripcion + ", laboratorio=" + laboratorio + "]";
+				+ descripcion + ", laboratorio=" + laboratorio + ", precio=" + precio + "]";
 	}
 	
+	public boolean equals (Producto other) {
+		return this.getIdProducto() == other.getIdProducto();
+	}
 	
 	
 	
