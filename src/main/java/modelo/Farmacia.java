@@ -3,7 +3,7 @@ package modelo;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 public class Farmacia {
 	private List<Sucursal> sucursales;
@@ -45,12 +45,6 @@ public class Farmacia {
 	}
 
 	public void agregarEmpleado(int idEmpleado, String nombre, String apellido, String dni, String obraSocial,
-			String nroAfiliado, Domicilio domicilio, String cuil, Sucursal sucursal, Boolean esEncargado) {
-		empleados.add(new Empleado(idEmpleado, nombre, apellido, dni, obraSocial, nroAfiliado, domicilio, cuil,
-				sucursal, esEncargado));
-	}
-
-	public void agregarEmpleado(int idEmpleado, String nombre, String apellido, String dni, String obraSocial,
 			String nroAfiliado, Domicilio domicilio, String cuil, int idSucursal, Boolean esEncargado) {
 
 		Sucursal sucursal = this.getSucursalById(idSucursal);
@@ -80,9 +74,7 @@ public class Farmacia {
 		return sucursal;
 	}
 
-	public void agregarVentasAleatorias() {
-		int cantidadVentas = 10;
-
+	public void agregarVentasAleatorias(int cantidadVentas) {
 		for (int i = 0; i < cantidadVentas; i++) {
 			Venta venta = generarVentaAleatoria();
 			ventas.add(venta);

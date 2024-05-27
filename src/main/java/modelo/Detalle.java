@@ -1,7 +1,6 @@
 package modelo;
 
 public class Detalle {
-	//private int idDetalle;
 	private Producto producto;
 	private int cantidad;
 	private double precioUnitario;

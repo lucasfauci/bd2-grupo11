@@ -1,6 +1,5 @@
 package modelo;
 
-import java.util.Objects;
 
 public class Sucursal {
 	private int idSucursal;

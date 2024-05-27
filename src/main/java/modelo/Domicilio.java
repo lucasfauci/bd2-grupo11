@@ -1,7 +1,6 @@
 package modelo;
 
 public class Domicilio {
-	//private int idDomicilio;
 	private String calle;
 	private int numero;
 	private String localidad;

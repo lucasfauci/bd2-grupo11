@@ -1,7 +1,6 @@
 package modelo;
 
 public class Empleado extends Persona {
-
 	private int idEmpleado;
 	private String cuil;
 	private Sucursal sucursal;
